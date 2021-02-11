@@ -33,10 +33,17 @@ app.use(express.static(path.join(__dirname, "../client"), {extensions: ["html", 
  
  // Routing Middleware.  
  // login route.
+//  Access form data, tell express you want to use POST request body
  app.post('/login', (req, res)=>{
    console.log(req.body)
-   res.send("trying to login")
+  //  send file: a file
+  // read user file and check email
+   res.sendFile(path.join(__dirname, '../client/dashboard.html'))
  })
+
+//  app.get('api/vi/teams', (req, res)=>{
+
+//  })
 
 // Final Middleware 
 // Catch all for any request not handled while express was
